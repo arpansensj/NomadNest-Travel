@@ -12,7 +12,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   }
 
-  const handleClick = (href) => {
+  const handleClick = (href: string) => {
     document.querySelector(href).scrollIntoView({
       behavior: 'smooth'
     });
