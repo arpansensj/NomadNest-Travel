@@ -13,10 +13,15 @@ const Navbar = () => {
   }
 
   const handleClick = (href: string) => {
-    document.querySelector(href).scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
+    const element = document.querySelector(href);
+    if (element instanceof HTMLElement) {
+        element.scrollIntoView({
+            behavior: 'smooth'
+        });
+    } else {
+        console.error(`Element with selector '${href}' not found.`);
+    }
+};
 
   return (
     <nav className="flexBetween max-container padding-container relative z-30 py-5">
